@@ -1,0 +1,26 @@
+# Terraform state
+*.tfstate
+*.tfstate.backup
+
+# Terraform plan files
+*.tfplan
+
+# Terraform module/provider directory
+.terraform/
+
+# Potential secrets
+*.tfvars
+*.auto.tfvars
+.env
+
+# Editor files
+*.swp
+*.bak
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Optional: Lock file (omit if publishing a reusable module)
+# .terraform.lock.hcl
+
