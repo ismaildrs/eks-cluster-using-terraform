@@ -1,5 +1,5 @@
 resource "aws_iam_role" "nodes" {
-  name = "${local.env}-${local.eks-name}-eks-nodes"
+  name = "${local.env}-${local.eks-name}-eks-nodes-role"
 
   assume_role_policy = <<POLICY
 {
@@ -34,7 +34,7 @@ resource "aws_iam_role_policy_attachment" "amazon_ec2_container_registry" {
 }
 
 resource "aws_eks_node_group" "general" {
-  cluster_name     = "${local.env}-${local.eks-name}-nodes"
+  cluster_name     = "${local.env}-${local.eks-name}"
   version          = local.eks-ver
   node_group_name = "general"
   node_role_arn    = aws_iam_role.nodes.arn
